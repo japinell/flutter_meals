@@ -1,19 +1,19 @@
 import "package:flutter/material.dart";
-import "package:flutter_meals/models/categories.dart";
-import "package:flutter_meals/models/meals.dart";
+import "package:flutter_meals/models/category.dart";
+import "package:flutter_meals/models/meal.dart";
 
 // Constants in Dart should be written in lowerCamelcase.
 const availableCategories = [
-  Categories(id: 'c1', title: 'Italian', color: Colors.purple),
-  Categories(id: 'c2', title: 'Quick & Easy', color: Colors.red),
-  Categories(id: 'c3', title: 'Hamburgers', color: Colors.orange),
-  Categories(id: 'c4', title: 'German', color: Colors.amber),
-  Categories(id: 'c5', title: 'Light & Lovely', color: Colors.blue),
-  Categories(id: 'c6', title: 'Exotic', color: Colors.green),
-  Categories(id: 'c7', title: 'Breakfast', color: Colors.lightBlue),
-  Categories(id: 'c8', title: 'Asian', color: Colors.lightGreen),
-  Categories(id: 'c9', title: 'French', color: Colors.pink),
-  Categories(id: 'c10', title: 'Summer', color: Colors.teal),
+  Category(id: 'c1', title: 'Italian', color: Colors.purple),
+  Category(id: 'c2', title: 'Quick & Easy', color: Colors.red),
+  Category(id: 'c3', title: 'Hamburgers', color: Colors.orange),
+  Category(id: 'c4', title: 'German', color: Colors.amber),
+  Category(id: 'c5', title: 'Light & Lovely', color: Colors.blue),
+  Category(id: 'c6', title: 'Exotic', color: Colors.green),
+  Category(id: 'c7', title: 'Breakfast', color: Colors.lightBlue),
+  Category(id: 'c8', title: 'Asian', color: Colors.lightGreen),
+  Category(id: 'c9', title: 'French', color: Colors.pink),
+  Category(id: 'c10', title: 'Summer', color: Colors.teal),
 ];
 
 const dummyMeals = [

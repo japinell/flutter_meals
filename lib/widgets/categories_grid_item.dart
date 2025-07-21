@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
-import "package:flutter_meals/models/categories.dart";
+import "package:flutter_meals/models/category.dart";
 
 class CategoriesGridItem extends StatelessWidget {
   const CategoriesGridItem({super.key, required this.category});
 
-  final Categories category;
+  final Category category;
 
   @override
   Widget build(BuildContext context) {
