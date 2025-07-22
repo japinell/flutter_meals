@@ -42,6 +42,7 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.star), label: "Favorites"),
         ],
         onTap: _selectPage,
+        currentIndex: _selectedPageIndex,
       ),
     );
   }
