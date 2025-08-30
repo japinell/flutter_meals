@@ -18,16 +18,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Preferences")),
-      drawer: MealDrawer(
-        onSelectScreen: (id) {
-          Navigator.of(context).pop();
-          if (id == "meals") {
-            Navigator.of(
-              context,
-            ).push(MaterialPageRoute(builder: (context) => TabsScreen()));
-          }
-        },
-      ),
+      // drawer: MealDrawer(
+      //   onSelectScreen: (id) {
+      //     Navigator.of(context).pop();
+      //     if (id == "meals") {
+      //       Navigator.of(
+      //         context,
+      //       ).push(MaterialPageRoute(builder: (context) => TabsScreen()));
+      //     }
+      //   },
+      // ),
       body: Column(
         children: [
           SwitchListTile(
