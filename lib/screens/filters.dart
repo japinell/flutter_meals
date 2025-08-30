@@ -2,6 +2,8 @@ import "package:flutter/material.dart";
 //import "package:flutter_meals/screens/tabs.dart";
 //import "package:flutter_meals/widgets/meal_drawer.dart";
 
+enum Filter { glutenFree, lactoseFree, vegetarian, vegan }
+
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({super.key});
 
@@ -31,97 +33,108 @@ class _FiltersScreenState extends State<FiltersScreen> {
       //     }
       //   },
       // ),
-      body: Column(
-        children: [
-          SwitchListTile(
-            value: _glutenFree,
-            onChanged: (isGlutenFree) {
-              setState(() {
-                _glutenFree = isGlutenFree;
-              });
-            },
-            title: Text(
-              "Gluten-free",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+      body: WillPopScope(
+        onWillPop: () async {
+          Navigator.of(context).pop({
+            Filter.glutenFree: _glutenFree,
+            Filter.lactoseFree: _lactoseFree,
+            Filter.vegetarian: _vegetarian,
+            Filter.vegan: _vegan,
+          });
+          return Future.value(false);
+        },
+        child: Column(
+          children: [
+            SwitchListTile(
+              value: _glutenFree,
+              onChanged: (isGlutenFree) {
+                setState(() {
+                  _glutenFree = isGlutenFree;
+                });
+              },
+              title: Text(
+                "Gluten-free",
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            subtitle: Text(
-              "Only include gluten-free meals.",
-              style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              subtitle: Text(
+                "Only include gluten-free meals.",
+                style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
+              activeColor: Theme.of(context).colorScheme.tertiary,
+              contentPadding: EdgeInsets.only(left: 34, right: 22),
             ),
-            activeColor: Theme.of(context).colorScheme.tertiary,
-            contentPadding: EdgeInsets.only(left: 34, right: 22),
-          ),
-          SwitchListTile(
-            value: _lactoseFree,
-            onChanged: (isLactoseFree) {
-              setState(() {
-                _lactoseFree = isLactoseFree;
-              });
-            },
-            title: Text(
-              "Lactose-free",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+            SwitchListTile(
+              value: _lactoseFree,
+              onChanged: (isLactoseFree) {
+                setState(() {
+                  _lactoseFree = isLactoseFree;
+                });
+              },
+              title: Text(
+                "Lactose-free",
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            subtitle: Text(
-              "Only include lactose-free meals.",
-              style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              subtitle: Text(
+                "Only include lactose-free meals.",
+                style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
+              activeColor: Theme.of(context).colorScheme.tertiary,
+              contentPadding: EdgeInsets.only(left: 34, right: 22),
             ),
-            activeColor: Theme.of(context).colorScheme.tertiary,
-            contentPadding: EdgeInsets.only(left: 34, right: 22),
-          ),
-          SwitchListTile(
-            value: _vegetarian,
-            onChanged: (isVegetarian) {
-              setState(() {
-                _vegetarian = isVegetarian;
-              });
-            },
-            title: Text(
-              "Vegetarian",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+            SwitchListTile(
+              value: _vegetarian,
+              onChanged: (isVegetarian) {
+                setState(() {
+                  _vegetarian = isVegetarian;
+                });
+              },
+              title: Text(
+                "Vegetarian",
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            subtitle: Text(
-              "Only include vegetarian meals.",
-              style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              subtitle: Text(
+                "Only include vegetarian meals.",
+                style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
+              activeColor: Theme.of(context).colorScheme.tertiary,
+              contentPadding: EdgeInsets.only(left: 34, right: 22),
             ),
-            activeColor: Theme.of(context).colorScheme.tertiary,
-            contentPadding: EdgeInsets.only(left: 34, right: 22),
-          ),
-          SwitchListTile(
-            value: _vegan,
-            onChanged: (isVegan) {
-              setState(() {
-                _vegan = isVegan;
-              });
-            },
-            title: Text(
-              "Vegan",
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+            SwitchListTile(
+              value: _vegan,
+              onChanged: (isVegan) {
+                setState(() {
+                  _vegan = isVegan;
+                });
+              },
+              title: Text(
+                "Vegan",
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            subtitle: Text(
-              "Only include vegan meals.",
-              style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              subtitle: Text(
+                "Only include vegan meals.",
+                style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
+              activeColor: Theme.of(context).colorScheme.tertiary,
+              contentPadding: EdgeInsets.only(left: 34, right: 22),
             ),
-            activeColor: Theme.of(context).colorScheme.tertiary,
-            contentPadding: EdgeInsets.only(left: 34, right: 22),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
