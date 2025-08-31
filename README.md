@@ -20,6 +20,12 @@ I want to be able to track different types of meals
 So that I can choose according to my preferences and mood
 ```
 
+```
+As an application user
+I want to be able to select and save favorite meals
+So that I can quickly access my preferred ones
+```
+
 ## Design
 
 ```
