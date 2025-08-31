@@ -26,6 +26,12 @@ I want to be able to select and save favorite meals
 So that I can quickly access my preferred ones
 ```
 
+```
+As an application user
+I want to be able to filter meals according to my dietary preferences
+So that I can make healthy decisions
+```
+
 ## Design
 
 ```
