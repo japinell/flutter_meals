@@ -52,7 +52,7 @@ Main screen. Manages the application flow, including switching between tabs and 
 
 ### Favorite Meals Screen
 
-![Flutter meals - Favorite Meals Screen.](./assets/images/meals-details-screen.png)
+![Flutter meals - Favorite Meals Screen.](./assets/images/favorite-meals-screen.png)
 
 ## License
 
