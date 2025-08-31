@@ -6,12 +6,18 @@ This is my third application developed in **Flutter** and **Dart.**
 
 This is a mobile application for managing meals that deeps dive more on advanced concepts like interactivity with additional widgets for managing data grids, tabs, and screen navigation. The application allows sharing state accross multiple screens.
 
-## User Story
+## User Stories
 
 ```
-As a healthy responsible software developer
+As a mindful software developer
 I want to track my meal details by categories
 So that I can plan and achieve my long-term health goals
+```
+
+```
+As an application user
+I want to be able to track different types of meals
+So that I can choose according to my preferences and mood
 ```
 
 ## Design
