@@ -9,7 +9,7 @@ This is a mobile application for managing meals that deeps dive more on advanced
 ## User Story
 
 ```
-As a health responsible software developer
+As a healthy responsible software developer
 I want to track my meal details by categories
 So that I can plan and achieve my long-term health goals
 ```
@@ -30,7 +30,7 @@ Contains an object consisting of the predefined attributes that comprise a categ
 Contains an object consisting of the predefined attributes that comprise a meal record; this is a more complex model consisting of an id, categories, title, image, ingredients, cooking steps, duration, complexity (a list of predefined values [simple, challenging, hard]), and affordability (a list of predefined values [affordable, pricey, luxurios]), as well as health attributes used for selection like gluten-free, lactose-free, vegetarian, and vegan.
 ```
 
-![Flutter expense tracker - Data design.](./assets/images/meal-model.png)
+![Flutter meals - Data design.](./assets/images/meal-model.png)
 
 ```
 --\lib\screens\categories.dart:
@@ -40,15 +40,15 @@ Main screen. Manages the application flow, including switching between tabs and 
 
 ### Main Screen
 
-![Flutter expense tracker - Main screen.](./assets/images/categories-screen.png)
+![Flutter meals - Main screen.](./assets/images/categories-screen.png)
 
 ### Meals Screen
 
-![Flutter expense tracker - Add New expense.](./assets/images/meals-screen.png)
+![Flutter meals - Meals Screen.](./assets/images/meals-screen.png)
 
 ### Meals Details Screen
 
-![Flutter expense tracker - Remove expense.](./assets/images/meals-details-screen.png)
+![Flutter meals - Meals Details Screen.](./assets/images/meals-details-screen.png)
 
 ## License
 
