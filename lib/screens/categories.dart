@@ -6,13 +6,8 @@ import "package:flutter_meals/screens/meals.dart";
 import "package:flutter_meals/models/category.dart";
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({
-    super.key,
-    required this.onToggleFavorite,
-    required this.availableMeals,
-  });
+  const CategoriesScreen({super.key, required this.availableMeals});
 
-  final void Function(Meal meal) onToggleFavorite;
   final List<Meal> availableMeals;
 
   void _selectCategory(BuildContext context, Category category) {
