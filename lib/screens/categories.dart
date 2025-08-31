@@ -5,13 +5,18 @@ import "package:flutter_meals/widgets/categories_grid.dart";
 import "package:flutter_meals/screens/meals.dart";
 import "package:flutter_meals/models/category.dart";
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key, required this.availableMeals});
 
   final List<Meal> availableMeals;
 
+  @override
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen> {
   void _selectCategory(BuildContext context, Category category) {
-    final filteredMeals = availableMeals
+    final filteredMeals = widget.availableMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
 
