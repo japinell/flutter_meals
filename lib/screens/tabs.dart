@@ -1,9 +1,17 @@
 import "package:flutter/material.dart";
+import "package:flutter_meals/data/dummy_data.dart";
 import "package:flutter_meals/models/meal.dart";
 import "package:flutter_meals/screens/categories.dart";
 import "package:flutter_meals/screens/filters.dart";
 import "package:flutter_meals/screens/meals.dart";
 import "package:flutter_meals/widgets/meal_drawer.dart";
+
+const defaultPreferences = {
+  Filter.glutenFree: false,
+  Filter.lactoseFree: false,
+  Filter.vegetarian: false,
+  Filter.vegan: false,
+};
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -17,6 +25,7 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedPageIndex = 0;
   final List<Meal> _favoriteMeals = [];
+  Map<Filter, bool> _mealPreferences = defaultPreferences;
 
   void _showInfoMessage(String message) {
     ScaffoldMessenger.of(context).clearSnackBars();
@@ -54,13 +63,34 @@ class _TabsScreenState extends State<TabsScreen> {
         MaterialPageRoute(builder: (context) => FiltersScreen()),
       );
 
-      print(result);
+      setState(() {
+        _mealPreferences = result ?? defaultPreferences;
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget activePage = CategoriesScreen(onToggleFavorite: _toggleFavoriteMeal);
+    final availableMeals = dummyMeals.where((meal) {
+      if (_mealPreferences[Filter.glutenFree]! && !meal.isGlutenFree) {
+        return false;
+      }
+      if (_mealPreferences[Filter.lactoseFree]! && !meal.isLactoseFree) {
+        return false;
+      }
+      if (_mealPreferences[Filter.vegetarian]! && !meal.isVegetarian) {
+        return false;
+      }
+      if (_mealPreferences[Filter.vegan]! && !meal.isVegan) {
+        return false;
+      }
+      return true;
+    }).toList();
+
+    Widget activePage = CategoriesScreen(
+      onToggleFavorite: _toggleFavoriteMeal,
+      availableMeals: availableMeals,
+    );
     var activePageTitle = "Categories";
 
     if (_selectedPageIndex == 1) {
