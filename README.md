@@ -50,6 +50,10 @@ Main screen. Manages the application flow, including switching between tabs and 
 
 ![Flutter meals - Meals Details Screen.](./assets/images/meals-details-screen.png)
 
+### Favorite Meals Screen
+
+![Flutter meals - Favorite Meals Screen.](./assets/images/meals-details-screen.png)
+
 ## License
 
 This project is licensed under The MIT License. Refer to https://opensource.org/licenses/MIT for more information of what you can and cannot do with this project. See contact information below if you have questions, comments, or suggestions for the project.
