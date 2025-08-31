@@ -1,13 +1,12 @@
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
-import "package:flutter_meals/data/dummy_data.dart";
-import "package:flutter_meals/models/meal.dart";
 import "package:flutter_meals/screens/categories.dart";
 import "package:flutter_meals/screens/filters.dart";
 import "package:flutter_meals/screens/meals.dart";
 import "package:flutter_meals/widgets/meal_drawer.dart";
 import "package:flutter_meals/providers/meals_provider.dart";
 import "package:flutter_meals/providers/favorites_provider.dart";
+import "package:flutter_meals/providers/filters_provider.dart";
 
 const defaultPreferences = {
   Filter.glutenFree: false,
