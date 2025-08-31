@@ -2,7 +2,7 @@
 
 ## Description
 
-This is my third application developed in **Flutter** and **Dart.**
+This is my third application developed in **Flutter** and **Dart** in my journey to become proficient in cross-platform application development using modern platforms.
 
 This is a mobile application for managing meals that deeps dive more on advanced concepts like interactivity with additional widgets for managing data grids, tabs, and screen navigation. The application allows sharing state accross multiple screens.
 
